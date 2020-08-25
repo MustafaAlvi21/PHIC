@@ -1,0 +1,131 @@
+      <!-- ------------------------------------------------------------------ -->
+      <div class="page-wrapper chiller-theme toggled" style="height: auto;">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+          <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper" style="background-color: #ffffff;">
+          <div class="sidebar-content" style="background-color: #ffffff;">
+            <!-- sidebar-search  -->
+            <div class="sidebar-menu">
+              <ul>
+                <% if (loginUser != 'Admin' ) {%>
+                <li class="header-menu" style="color: #cf3d3c;">
+                  <div id="close-sidebar"  style="color: #cf3d3c;">
+                    <br>
+                    <div class="row mx-auto">
+                    <div class="col"  style="color: #cf3d3c;">General</div><div class="col"></div> <div class="col"><p  style="float: right;"><i class="fas fa-times"></i></p> </div>
+                  </div>
+                </div>
+                </li>
+                <li class="sidebar-dropdown " >
+                  <a href="/" style="color: #cf3d3c;">
+                    <i class="fa fa-tachometer-alt"></i>
+                    <span  style="color: #cf3d3c;">Home</span>
+                  </a>
+                <li class="sidebar-dropdown" style="color: #cf3d3c;">
+                  <a href="/blood_stock" style="color: #cf3d3c;">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span style="color: #cf3d3c;">Blood Stock</span>
+                  </a>
+                </li>
+                <li class="sidebar-dropdown" style="color: #cf3d3c;">
+                  <a href="#" style="color: #cf3d3c;">
+                    <i class="far fa-gem" ></i>
+                    <span style="color: #cf3d3c;">Help Section</span>
+                  </a>
+                  <div class="sidebar-submenu" style="color: #cf3d3c;">
+                    <ul>
+                      <li>
+                        <a style="color: #cf3d3c;" href="/help-section/donationRequest">Donation Request</a>
+                      </li>
+                      <li>
+                        <a  style="color: #cf3d3c;" href="/help-section/Need-Blood">Need Blood</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="/donor" style="color: #cf3d3c;">
+                    <i class="fa fa-chart-line"></i>
+                    <span  style="color: #cf3d3c;">View Donors</span>
+                  </a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="/accepters" style="color: #cf3d3c;">
+                    <i class="fa fa-globe"></i>
+                    <span style="color: #cf3d3c;">View Accepters</span>
+                  </a>
+                </li>
+                <%}  else {%>
+                  <li class="header-menu">
+                    <div id="close-sidebar">
+                      <br>
+                      <div class="row mx-auto">
+                      <div style="color: #cf3d3c;" class="col">Admin</div><div class="col"></div> <div style="color: #cf3d3c" class="col"><p  style="float: right; "><i  class="fas fa-times"></i></p> </div>
+                    </div>
+                  </div>
+                  </li>
+                <li class="sidebar-dropdown">
+                  <a href="/" style="color: #cf3d3c;">
+                    <i class="fa fa-calendar"></i>
+                    <span style="color: #cf3d3c;">Home-Admin</span>
+                  </a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a href="/c-panel/admin/donors" style="color: #cf3d3c;">
+                    <i class="fa fa-calendar"></i>
+                    <span style="color: #cf3d3c;">View Donor Req</span>
+                  </a>
+                </li>
+                <li class="sidebar-dropdown" style="color: #cf3d3c;">
+                  <a href="/c-panel/admin/accepters" style="color: #cf3d3c;">
+                    <i class="fa fa-folder"></i>
+                    <span style="color: #cf3d3c;">View Accepter Req</span>
+                  </a>
+                </li>
+                <%}%>
+              </ul>
+            </div>
+            <!-- sidebar-menu  -->
+          </div>
+        </nav>
+        
+        <!-- page-content" -->
+      </div>
+      <!-- page-wrapper -->  
+       
+
+      <script>
+        jQuery(function ($) {
+
+$(".sidebar-dropdown > a").click(function() {
+$(".sidebar-submenu").slideUp(200);
+if (
+$(this)
+  .parent()
+  .hasClass("active")
+) {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .parent()
+  .removeClass("active");
+} else {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .next(".sidebar-submenu")
+  .slideDown(200);
+$(this)
+  .parent()
+  .addClass("active");
+}
+});
+
+$("#close-sidebar").click(function() {
+$(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+$(".page-wrapper").addClass("toggled");
+});
+});
+</script>
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <!-- Footer icon -->
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+          <!-- font  family -->
+          <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    </head>
+
+  <style>
+        .a1{
+          padding: 10px 100px;
+        }
+        @media only screen and (max-width: 800px) {
+          .a1{
+            padding: 0px;
+            background-color: burlywood;
+          }
+          }
+  .row12{ margin: 10px 50px;  }
+  @media only screen and (max-width: 600px) {
+    .row12{
+      width: 100%;
+      margin: 0px; 
+    }
+    .row11{
+      margin: 0px;
+      width: 100%;
+    }
+  }
+  table td:hover {
+  background-color: #c86060;
+  color: #ffffff;
+  font-weight: bold;
+  
+  box-shadow: #cf3d3c -1px 1px, #cf3d3c -2px 2px, #cf3d3c -3px 3px, #cf3d3c -4px 4px, #cf3d3c -5px 5px, #cf3d3c -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+      transition-duration: 0.4s;
+      transition-property: all;
+  transition-timing-function: line;
+}
+td{
+  border: 0.2px solid #cf3d3c;
+  background-color: #ffffff;
+color: #cf3d3c;
+}
+</style>
+    
+    <!-- ----------------------------   hehehe   -------------------------------------------- -->
+    <body style="font-family: 'Roboto';  background-color: #ffffff">
+    <center>
+        <br>  <br>
+      <h1 style="border-bottom: 1px solid grey; display: inline;">Blood Stock</h1>
+      
+    </center>
+      <!-- ------------------------------------------------------------------ -->
+      <br>  <br>
+      <div class="row col-11 mx-auto row11">
+      <div class="table-responsive row12">
+        <table class="table">
+          <thead class="" style="background-color: #cf3d3c; color: #ffffff;">
+            <tr>
+              <th> <center> Blood Group  </center> </th>
+              <th> <center> Blood Cell  </center> </th>
+            </tr>
+          </thead>
+          <tbody>       
+          <% if(data){
+              data.forEach(function(data){
+              %>
+              <tr>
+                <td> <center> <%= data.Blood_Group %> </center> </td>
+                <td> <center> <%= data.Total_cells_available %> </center> </td>
+              </tr>
+              <%  })  %>
+              <%  } else { %>
+                  <td> <strong> There is no data yet, add some data. </strong> </td>
+              <%  }  %>
+        </tbody>
+        </table>
+      </div>
+   
+        <!-- ------------------------------------------------------------------ -->
+       
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

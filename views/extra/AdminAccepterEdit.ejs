@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Footer icon -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+        <!-- font  family -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  </head>
+        <style>
+          .btn1:hover {
+    color: white;
+    background-color: #d9534f;
+  }
+  .btn1 {
+    color: #d9534f;
+    border: 0.5px solid #d9534f;
+    background-color: antiquewhite;
+  }
+    </style>
+      
+  <!-- ----------------------------   hehehe   -------------------------------------------- -->
+  <body style="font-family: 'Roboto';  background-color: #ffffff">
+
+  <!--  s t a r t   o f    f o r m   -->
+  <br> <br>   <br>
+  <div class="mx-auto" >
+    <div class="row mx-auto" >
+      <div class="loginbox mx-auto col-lg-5 col-sm-7 mx-auto" style="background-color: antiquewhite; margin: 15px auto; border-radius: 20px;">
+                   <center>
+                  <h1>Update Accepter Request </h1>
+                </center>
+                  <form style="border-top: grey 2px  groove;" action="/c-panel/admin/accepters/edit" id="passwordForm" method="POST">
+                    <% if(msg != ''){ %>
+                      <br>
+                      <div class="alert alert-success alert-dismissible">
+                        <strong>      
+                    <%= msg %>
+                        </strong>
+                    </div>
+                      <% } %>
+                    <br>
+                    <div class="mb-3">
+                      <label for="validationServerUsername">Username</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupPrepend3"><span class="glyphicon glyphicon-user"></span> </span>
+                        </div>
+                        <p style="background-color: white; margin: 5px 0px; border: 0.5px solid; padding-left: 15px;"><%= data.Username  %> </p>
+                        <div class="invalid-feedback">
+                          Enter category of password.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="validationServerUsername">Status</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupPrepend3"><span class="glyphicon glyphicon-user"></span> </span>
+                        </div>
+                        <select style="background-color: white; margin: 5px 0px; border: 0.5px solid; height: 30px;" class="form-control" name="Status" style="height: 30px;">
+                            <option value="Accepted"> Accepted </option>
+                            <option value="Pending" selected> Pending </option>
+                            <option value="Rejected"> Rejected </option>
+                          </select>
+                        <div class="invalid-feedback">
+                          Enter category of password.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="validationServerUsername">Blood Group</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupPrepend3"><span class="glyphicon  glyphicon-star-empty"></span> </span>
+                        </div>
+                        <p style="background-color: white; margin: 5px 0px; border: 0.5px solid; padding-left: 10px;"><%= data.Blood_Group  %> </p>
+                        <div class="invalid-feedback">
+                          Please enter correct password.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="validationServerUsername">Blood Cell</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupPrepend3"><span class="glyphicon glyphicon-envelope"></span> </span>
+                        </div>
+                        <p style="background-color: white; margin: 5px 0px; border: 0.5px solid; padding-left: 10px;"><%= data.Blood_Cell  %> </p>
+                        <div class="invalid-feedback">
+                          Enter category of password.   
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                      <div class="col">
+                          <button class="btn1 btn btn-lg btn-block" type="submit" value="Add ">Save Changes</button>
+                      <br>
+                      <br>
+                    </div>
+                    </form>
+              
+                </div>
+                </div>
+              </div>
+        <!--    e n d   o f   f o r m    -->
+     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>
